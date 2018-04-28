@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用背景图像</title>
+	</head>
+	<body>
+		<h1>使用背景图像</h1>
+		<p>在使用border-image属性的时候，仍然可以正常使用背景图像</p>
+		<style>
+			.wrap {
+			   -moz-border-image: url("img/border-image-small-1.png") 22 round;
+			   -webkit-border-image: url("img/border-image-small-1.png") 22 round;
+			   -o-border-image: url("img/border-image-small-1.png") 22 round;
+			   border-image: url("img/border-image-small-1.png") 22 round;
+			   display: inline-block;
+			   border-width: 22px;
+			}
+		</style>
+		<div class="wrap"> 
+			<img src="img/bg.jpg" />
+		</div> 
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择某个元素的第一个子元素<:first-child></title>
+	</head>
+	<body>
+		<h1>选择某个元素的第一个子元素<:first-child></h1>
+		<p>:first-child是用来选择某个元素的第一个子元素</p>
+		<h2>示例</h2>
+		<h3>以前:需在要第一个li上加上一个相应的class名，比如说“first”，然后我们在给予对应的样式</h3>
+		<style>
+			.wrap li.first {
+				background: green;
+				border: 1px dashed blue;
+			}
+		</style>
+		<h3>在CSS3最新选择器出现之后，就可以使用:first-child来实现，就不需要在增加一个额外的class名了</h3>
+		<style>
+			.wrap li:first-child {
+				background: green;
+				border: 1px dashed blue;
+			}
+		</style>
+	</body>
+</html>

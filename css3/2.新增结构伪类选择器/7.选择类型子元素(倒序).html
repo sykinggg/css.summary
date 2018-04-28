@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择元素并倒序计算<:nth-last-child()></title>
+	</head>
+	<body>
+		<h1>选择元素并倒序计算<:nth-last-child()></h1>
+		<p>":nth-last-child()"选择器和前面的":nth-child()"很相似，只是这里多了一个last，所以他起的作用就和前面的":nth-child"不一样了，它是从最后一个元素开始算，来选择特定元素</p>
+		<h2>使用:nth-last-child()选择器来选择元素并添加样式</h2>
+		<style>
+			.wrap p:nth-child(4) {
+				background: red;
+			}
+		</style>
+		<p>设置p元素的倒数第四个元素，我们也可以像":nth-child(2)"一样，使用表达式来选择特定元素</p>
+	</body>
+</html>

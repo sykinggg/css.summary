@@ -1,0 +1,11 @@
+// Navbar vertical align
+// 导航栏的垂直对齐
+//
+// Vertically center elements in the navbar.
+// Example: an element has a height of 30px, so write out `.navbar-vertical-align(30px);` to calculate the appropriate top margin.
+// 垂直中心元素在导航栏。
+// 例如：一个元素有一个高度30px，所以写出来`。导航栏垂直对齐（30px）；`计算适当的上缘。
+.navbar-vertical-align(@element-height) {
+  margin-top: ((@navbar-height - @element-height) / 2);
+  margin-bottom: ((@navbar-height - @element-height) / 2);
+}

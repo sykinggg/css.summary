@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>border-radius中指定两个半径</title>
+	</head>
+	<body>
+		<h1>border-radius中指定两个半径</h1>
+		<h2>在border-radius属性中，可以指定两个半径</h2>
+		<style>
+			border-radius: 40px 20px;
+		</style>
+		<p>针对这种情况，各种浏览器的处理方式并不一致。在Chrome浏览器与Safari浏览器中，会绘制出一个椭圆形边框，第一个半径为椭圆的水平方向半径，第二个半径为椭圆的垂直方向半径</p>
+		<p>在Firefox浏览器与Opera浏览器中，将第一个半径作为边框左上角与右下角的圆半径来绘制，将第二个半径作为边框右上角与左下角的圆半径来绘制</p>
+		<h2>div元素的样式修改为如下所示的样式代码（使用两个半径），然后重新提交运行该示例， 看看在不同浏览器显示的效果</h2>
+		<style>
+			.wrap {
+				border: solid 5px blue;
+				border-radius: 40px 20px;
+				-moz-border-radius: 40px 20px;
+				-o-border-radius: 40px 20px;
+				-webkit-border-redius: 40px 20px;
+				background: sykblue;
+				padding: 20px;
+				width: 180px;
+			}
+		</style>
+	</body>
+</html>

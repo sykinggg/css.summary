@@ -1,0 +1,25 @@
+body {
+    background: #f06d06;
+    font-size: 80%;
+}
+
+main {
+    background: white;
+    height: 300px;
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    resize: vertical;
+    overflow: auto;
+}
+
+main div {
+    background: black;
+    color: white;
+    padding: 20px;
+    resize: vertical;
+    overflow: auto;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动换行</title>
+	</head>
+	<body>
+		<h1>自动换行</h1>
+		<p>单词太长的话就可能无法超出某个区域</p>
+		<p>在 CSS3 中，word-wrap 属性允许您允许文本强制文本进行换行 - 即使这意味着会对单词进行拆分</p>
+		<h2>允许对长单词进行拆分，并换行到下一行</h2>
+		<style>
+			p {
+				width: 11em;
+				border: 1px solid #000000;
+				word-wrap: break-word;
+			}
+		</style>
+		<p>
+			This paragraph contains a very long word:       thisisaveryveryveryveryveryverylongword. The long word will break and           wrap to the next line.
+		</p>
+	</body>
+</html>

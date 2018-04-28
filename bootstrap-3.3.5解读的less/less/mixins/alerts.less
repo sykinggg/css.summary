@@ -1,0 +1,16 @@
+// Alerts
+
+//弹窗背景边框颜色字体颜色的控制
+.alert-variant(@background; @border; @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+  //分割线的样式与边框颜色变量相同但变暗.darken方法
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  //弹窗链接的字体颜色
+  .alert-link {
+    color: darken(@text-color, 10%);
+  }
+}

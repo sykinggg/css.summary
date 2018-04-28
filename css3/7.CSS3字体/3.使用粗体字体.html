@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用粗体字体</title>
+	</head>
+	<body>
+		<h1>使用粗体字体</h1>
+		<p>一个包含描述符的 @font-face</p>
+		<h2>示例:</h2>
+		<style>
+			@font-size {
+				font-family: myFristFont;
+				src: url('singlemalta-webfont.ttf'),
+					url('singlemalta-webfont.eot'); /* IE9+ */ 
+				font-weight: bold;
+			}
+		</style>
+		<p>文件 "singlemalta-webfont.ttf" 是另一个字体文件，它包含了 singlemalta字体的粗体字符</p>
+		<p>只要 font-family 为 "myFirstFont" 的文本需要显示为粗体</p>
+		<p>通过这种方式，我们可以为相同的字体设置许多 @font-face 规则</p>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择没有任何内容的元素<:empty></title>
+	</head>
+	<body>
+		<h1>选择没有任何内容的元素<:empty></h1>
+		<p>:empty是用来选择没有任何内容的元素，这里没有内容指的是一点内容都没有，哪怕是一个空格</p>
+		<h2>其中一个段落什么都没有内容为空，如果想这个p隐藏掉，就可通过:empty选择器来实现</h2>
+		<style>
+			p:empty {
+				display: none;
+			}
+		</style>
+		<h2>注意::empty选择器对于没有任何内容的元素判断是非常有用的</h2>
+	</body>
+</html>

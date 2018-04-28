@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用您需要的字体</title>
+	</head>
+	<body>
+		<h1>使用您需要的字体</h1>
+		<p>新的 @font-face 规则中，您必须首先定义字体的名称（比如 myFirstFont），然后指向该字体文件</p>
+		<p>如需为 HTML 元素使用字体，请通过 font-family 属性来引用字体的名称 (myFirstFont)</p>
+		<h2>示例</h2>
+		<style>
+			@font-face {
+				font-family: myFirstFont;
+				src: url("singlemalta-webfont.ttf"),;
+					url("singlemalta-webfont.eot"); /* IE9+ */
+			}
+			div {
+				font-family: myFirstFont;
+			}
+		</style>
+	</body>
+</html>

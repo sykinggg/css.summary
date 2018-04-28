@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>matrix() 方法</title>
+	</head>
+	<body>
+		<h1>matrix() 方法</h1>
+		<p>matrix() 方法把所有 2D 转换方法组合在一起</p>
+		<p>matrix() 方法需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素</p>
+		<h2>示例代码</h2>
+		<p>使用 matrix 方法将 div 元素旋转 30 度</p>
+		<style>
+			div {
+				transform: matrix(0.866,0.5,-0.5,0.866,0,0);
+				-ms-transform: matrix(0.866,0.5,-0.5,0.866,0,0);		/* IE 9 */
+				-moz-transform: matrix(0.866,0.5,-0.5,0.866,0,0);		/* Firefox */
+				-webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0);	/* Safari and Chrome */
+				-o-transform: matrix(0.866,0.5,-0.5,0.866,0,0);			/* Opera */
+			}
+		</style>
+		<h1>真实案例</h1>
+		<style>
+			div
+		{
+		   width:100px;
+		   height:75px;
+		   background-color:yellow;
+		   border:1px solid black;
+		}
+		div#div2
+		{
+		   transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+		   -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* IE 9 */
+		   -moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Firefox */
+		   -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Safari and Chrome */
+		   -o-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Opera */
+		}
+
+		</style>
+		   <div>
+		       你好。这是一个 div 元素。
+		   </div>
+		   <div id="div2">
+		       你好。这是一个 div 元素。
+		   </div>
+	</body>
+</html>

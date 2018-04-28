@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>css 响应式和自适应的区别与特点</title>
+	</head>
+	<body>
+		<h1>css 响应式和自适应的区别与特点</h1>
+		<p>百分比宽度布局</p>
+		<p>流式布局</p>
+
+
+		<h2>1.允许网页宽度自动调整</h2>
+		<p>首先，在网页代码的头部，加入一行viewport元标签</p>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<h3>代码描述</h3>
+		<p>viewport是网页默认的宽度和高度</p>
+
+		<p>网页宽度默认等于屏幕宽度（width=device-width），原始缩放比例（initial-scale=1）为1.0，即网页初始大小占屏幕面积的100%</p>
+
+		<h3>注意:</h3>
+		<p>所有主流浏览器都支持这个设置，包括IE9。对于那些老式浏览器（主要是IE6、7、8），需要使用css3-mediaqueries.js。</p>
+		<h3>使用方法</h3>
+		<pre>
+	　<!--[if lt IE 9]>
+　　　　<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	　<![endif]-->
+		</pre>
+
+
+		<h3>使用注意:</h3>
+		<p>尽量少使用绝对宽度</p>
+		<span>由于网页会根据屏幕宽度调整布局，所以不能使用绝对宽度的布局</span>
+		<span>也不能使用具有绝对宽度的元素</span>
+		<h3>具体说明</h3>
+
+		<p>CSS代码不能指定像素宽度</p>
+		<pre>
+			width: xxpx;
+		</pre>
+
+		<p>通过指定百分比宽度来替代</p>
+		<span>同时还可以配合css的cal，进行计算宽度</span>\
+		<pre>
+			width: xx%;
+		</pre>
+		
+		<p>或者</p>
+		<pre>
+			width: auto;
+		</pre>
+
+
+		<h3>相对大小字体</h3>
+		<p>字体也不能使用绝对大小（px），而只能使用相对大小（em）或者高清方案（rem）</p>
+		<p>rem不局限于字体大小，前面的宽度width也可以使用，代替百分比</p>
+		<pre>
+			body {
+				font: normal 100% Helvetica, Arial, sans-self;
+			}
+		</pre>
+		<h3>代码描述</h3>
+		<p>字体大小是页面默认大小的100%，即16像素</p>
+		<pre>
+			h1 {
+				font-size: 1.5em;
+			}
+		</pre>
+		<h3>代码描述</h3>
+		<p>h1的大小是默认大小的1.5倍，即24像素（24/16=1.5）</p>
+		<pre>
+			small {
+				font-size: 0.875em;
+			}
+		</pre>
+		<h3>代码描述</h3>
+		<p>small元素的大小是默认大小的0.875倍，即14像素（14/16=0.875）</p>
+
+
+
+
+
+
+		<h1>流式布局</h1>
+		<p>各个区块的位置都是浮动的，不是固定不变的</p>
+		<pre>
+			.main {
+				float: right;
+				width: 70%;
+			}
+
+			.leftBar {
+				float: left;
+				width: 25%;
+			}
+		</pre>
+		<h3>代码描述</h3>
+		<p>float的好处是，如果宽度太小，放不下两个元素，后面的元素会自动滚动到前面元素的下方，不会在水平方向overflow（溢出），避免了水平滚动条的出现</p>
+
+		<h3>注意:</h3>
+		<p>绝对定位（position: absolute）的使用，也要非常小心</p>
+
+
+
+
+
+
+
+		<h1>选择加载css</h1>
+		<p>"自适应网页设计"的核心，就是CSS3引入的Media Query模块</p>
+
+		<h3>注意:</h3>
+		<p>自动探测屏幕宽度，然后加载相应的CSS文件</p>
+		
+		<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 400px)" href="text1.css">
+
+		<h3>代码描述</h3>
+		<p>如果屏幕宽度小于400像素（max-device-width: 400px），就加载tinyScreen.css文件</p>
+
+		<link rel="stylesheet" type="text/css" media="screen and (min-width: 400px) and (max-device-width: 600px)" href="text2.css">
+
+		<h3>代码描述</h3>
+		<p>如果屏幕宽度在400像素到600像素之间，则加载smallScreen.css文件</p>
+
+		<h3>注意:</h3>
+		<p>除了用html标签加载CSS文件，还可以在现有CSS文件中加载</p>
+		<pre>
+			@import url("text1.css") screen and (max-device-width: 400px);
+		</pre>
+
+
+
+
+
+
+
+
+		<h1>CSS的@media规则</h1>
+		<p>同一个CSS文件中，也可以根据不同的屏幕分辨率，选择应用不同的CSS规则</p>
+
+		<pre>
+			@media screen and (nax-device-width: 400px) {
+				.column {
+					float: none;
+					width: auto;
+				}
+				#sidebar {
+					display: none;
+				}
+			}
+		</pre>
+		<h3>代码描述</h3>
+		<p>如果屏幕宽度小于400像素</p>
+		<p>column块取消浮动（float:none）、宽度自动调节（width:auto），sidebar块不显示（display:none）</p>
+
+
+
+
+
+
+
+		<h1>图片的自适应（fluid image）</h1>
+		<p>除了布局和文本，"自适应网页设计"还必须实现图片的自动缩放</p>
+		<pre>
+			img: {
+				max-width: 100%l
+			}
+		</pre>
+		<p>这行代码对于大多数嵌入网页的视频也有效</p>
+		<pre>
+			img, object{
+				max-width: 100%;
+			}
+		</pre>
+		<p>老版本的IE不支持max-width</p>
+		<pre>
+			img: {
+				width: 100%;
+			}
+		</pre>
+		<p>此外，windows平台缩放图片时，可能出现图像失真现象</p>
+		<pre>
+			img {
+				-ms-interpolation-mode: bicubic;
+			}
+		</pre>
+		<p>或者，Ethan Marcotte的imgSizer.js</p>
+		<script>
+			addLoadEnvent(function() {
+				var imgs = document.getELementById("content").getELementsByTagName("img");
+				imgSizer.collate(imgs);
+			});
+		</script>
+		<h3>总结</h3>
+		<p>有条件的话，最好还是根据不同大小的屏幕，加载不同分辨率的图片</p>
+		<p>服务器端和客户端都可以实现</p>
+	</body>
+</html>

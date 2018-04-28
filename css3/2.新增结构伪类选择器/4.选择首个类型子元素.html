@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择某元素下的第一个同类子元素<:first-of-type></title>
+	</head>
+	<body>
+		<h1>选择某元素下的第一个同类子元素<:first-of-type></h1>
+		<p>“:first-of-type”选择器类似于“:first-child”选择器，但不同的是:first-of-type”选择器还额外指定了元素的类型</p>
+		<p>主要用定位匹配属于其父元素的特定类型的首个子元素</p>
+		<p>:first-of-type选择器，不限制是否为第一个子元素，只要为该类型元素的第一个就行</p>
+		<p> 类型是指什么呢，就是冒号前面匹配到的东西，比如 p:first-of-type，就是指所有p元素中的第一个</p>
+		<h2>为第一个p元素设置背景色</h2>
+		<style>
+			.wrap > p:first-of-type {
+				background: green;
+			}
+		</style>
+	</body>
+</html>

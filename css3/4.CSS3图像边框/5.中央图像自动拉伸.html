@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>中央图像自动拉伸</title>
+	</head>
+	<body>
+		<h1>中央图像自动拉伸</h1>
+		<p>浏览器将边框所用图像自动分割为9部分后，除了将border-top-image、border-left-image、border-right-image、border-bottom-image这4部分自动分配为四条边所用的图像之外</p>
+		<p>将位于中间部分的图像分配给元素边框包围的中间区域，随着div元素的内容变化的同时，或者在样式代码中修改div元素的宽度或高度的同时，中间部分的图像也会自动进行伸缩，以填满该中间区域</p>
+		<p>如下</p>
+		<style>
+			.wrap {
+				border: dashed;
+				border-image: url(../../AJAX/img/1.jpg) 18 /5px;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 18 /5px;
+				-moz-border-image: url(../../AJAX/img/1.jpg) 18 /5px;
+				width: 100px;
+			}
+		</style>
+	</body>
+</html>

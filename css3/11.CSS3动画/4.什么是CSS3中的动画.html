@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>什么是 CSS3 中的动画</title>
+	</head>
+	<body>
+		<h1>什么是 CSS3 中的动画</h1>
+		<p>动画是使元素从一种样式逐渐变化为另一种样式的效果</p>
+		<p>百分比来规定变化发生的时间，或用关键词 "from" 和 "to"，等同于 0% 和 100%</p>
+		<p>0% 是动画的开始，100% 是动画的完成</p>
+		<p>为了得到最佳的浏览器支持，应该始终定义 0% 和 100% 选择器</p>
+		<h1>实例</h1>
+		<p>当动画为 25% 及 50% 时改变背景色，然后当动画 100% 完成时再次改变</p>
+		<style>
+			@keyframes myfirst {
+				0% {
+					background: red;
+				}
+				25% {
+					background: yellow;
+				}
+				50% {
+					background: blue;
+				}
+				100% {
+					background: green;
+				}
+			}
+			@-moz-keyframes myfirst {
+				0% {
+					background: red;
+				}
+				25% {
+					background: yellow;
+				}
+				50% {
+					background: blue;
+				}
+				100% {
+					background: green;
+				}
+			}
+			@-webkit-keyframes myfirst {
+				0% {
+					background: red;
+				}
+				25% {
+					background: yellow;
+				}
+				50% {
+					background: blue;
+				}
+				100% {
+					background: green;
+				}
+			}
+			@-o-keyframes myfirst {
+				0% {
+					background: red;
+				}
+				25% {
+					background: yellow;
+				}
+				50% {
+					background: blue;
+				}
+				100% {
+					background: yellow;
+				}
+			}
+		</style>
+	</body>
+</html>

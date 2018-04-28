@@ -1,0 +1,12 @@
+// Text overflow
+// Requires inline-block or block for proper styling
+// 文本溢出
+// 需要内联块或块进行正确的样式
+
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // clip：简单裁切。ellipsis不止简单剪切还有...。
+  white-space: nowrap;
+  // 设置如何处理元素内的空白，段落中的文本不进行换行。
+}

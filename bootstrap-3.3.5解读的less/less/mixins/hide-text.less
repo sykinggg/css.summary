@@ -1,0 +1,26 @@
+// CSS image replacement
+// CSS图像变换
+//
+// Heads up! v3 launched with only `.hide-text()`, but per our pattern for
+// mixins being reused as classes with the same name, this doesn't hold up. As
+// of v3.0.1 we have added `.text-hide()` and deprecated `.hide-text()`.
+// V3推出只有'hide-text（）'，但根据我们的模式被重复使用混合具有相同名称的类，这不成立。
+// 为我们增加了V3.0.1。'text- hide() '和过时的` hide-text `（）。
+//
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+
+// Deprecated as of v3.0.1 (will be removed in v4)
+// 过时的V3.0.1（将被删除在V4）
+.hide-text() {
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// New mixin to use as of v3.0.1
+// 新的混合使用作为V3.0.1
+.text-hide() {
+  .hide-text();
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>scale() 方法</title>
+	</head>
+	<body>
+		<h1>scale() 方法</h1>
+		<p>通过 scale() 方法，元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数</p>
+		<h2>示例代码</h2>
+		<style>
+			div {
+				transform: scale(2, 4);
+				-ms-transform: scale(2, 4);	/* IE 9 */
+				-webkit-transform: scale(2, 4);	/* Safari 和 Chrome */
+				-o-transform: scale(2, 4);	/* Opera */
+				-moz-transform: scale(2, 4);	/* Firefox */
+			}
+		</style>
+		<p>值 scale(2,4) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍</p>
+		<h1>真实案例</h1>
+		<style>
+			div
+			{
+			   width:100px;
+			   height:75px;
+			   background-color:yellow;
+			   border:1px solid black;
+			}
+			div#div2
+			{
+			  margin:100px;
+			  transform:scale(2,4);
+			  -ms-transform:scale(2,4); /* IE 9 */
+			  -moz-transform:scale(2,4); /* Firefox */
+			  -webkit-transform:scale(2,4); /* Safari and Chrome */
+			  -o-transform:scale(2,4); /* Opera */
+			}
+		</style>
+		   <div>
+		       你好。这是一个 div 元素。
+		   </div>
+		   <div id="div2">
+		       你好。这是一个 div 元素。
+		   </div>
+	</body>
+</html>

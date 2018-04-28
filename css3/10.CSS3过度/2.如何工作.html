@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>如何工作</title>
+	</head>
+	<body>
+		<h1>如何工作</h1>
+		<p>CSS3 过渡是元素从一种样式逐渐改变为另一种的效果</p>
+		<h2>必须规定两项内容</h2>
+		<h3>1. 规定您希望把效果添加到哪个 CSS 属性上</h3>
+		<h3>2. 规定效果的时长</h3>
+		<h1>实例</h1>
+		<p>应用于宽度属性的过渡效果，时长为 2 秒</p>
+		<style>
+			div {
+				transition: width 2s;
+				-moz-transition: width 2s;
+				-webkit-transition: width 2s;
+				-o-transition:width 2s;
+			}
+		</style>
+		<h1>代码解释</h1>
+		<p>注释：如果时长未规定，则不会有过渡效果，因为默认值是 0</p>
+		<p>效果开始于指定的 CSS 属性改变值时。CSS 属性改变的典型时间是鼠标指针位于元素上时</p>
+		<h1>实例</h1>
+		<p>规定当鼠标指针悬浮于</p>
+		<p>元素上时</p>
+		<style>
+			div:hover {
+				width: 300px;
+			}
+		</style>
+		<h1>代码描述:</h1>
+		<p>注释：当指针移出元素时，它会逐渐变回原来的样式</p>
+	</body>
+</html>

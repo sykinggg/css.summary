@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>不显示边框</title>
+	</head>
+	<body>
+		<h1>不显示边框</h1>
+		<p>如果使用了border-radius属性但是把边框设定为不显示的时候，浏览器将把背景的四个角绘制为圆角</p>
+		<h2>指定边框为不显示</h2>
+		<style>
+			.wrap {
+				border: none;
+				border-radius: 20px;
+				-moz-border-radius: 20px;
+				-o-border-radius: 20px;
+				-webkit-border-radius: 20px;
+				background-color: skyblue;
+				padding: 20px;
+				width: 180px;
+			}
+		</style>
+	</body>
+</html>

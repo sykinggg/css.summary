@@ -1,0 +1,499 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Flex布局:语法篇</title>
+	</head>
+	<body>
+		<h1>Flex布局</h1>
+		<p>网页布局（layout）是CSS的一个重点应用</p>
+		<img src="img/bg2015071001.gif" alt="">
+
+		<h3>图片描述</h3>
+
+		<h4>传统布局</h4>
+		<p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性</p>
+
+
+		<h3>注意:浏览器兼容性</h3>
+		<img src="img/bg2015071003.jpg" alt="">
+
+
+
+
+
+
+		<h1>Flex布局</h1>
+		<p>Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性</p>
+
+		<h2>使用描述</h2>
+
+		<p>任何一个容器都可以指定为Flex布局</p>
+		<style>
+			.box {
+				display: flex;
+			}
+		</style>
+		<pre>
+			.box {
+				display: flex;
+			}
+		</pre>
+
+		<p>行内元素也可以使用Flex布局</p>
+		<style>
+			.box {
+				display: inline-flex;
+			}
+		</style>
+		<pre>
+			.box {
+				display: inline-flex;
+			}
+		</pre>
+
+		<p>webkit内核的浏览器兼容</p>
+		<span>Webkit内核的浏览器，必须加上-webkit前缀</span>
+		<style>
+			.box {
+				display: -webkit-flex;
+				display: flex;
+			}
+		</style>
+		<pre>
+			.box {
+				display: -webkit-flex;
+				display: flex;
+			}
+		</pre>
+
+		<h3>注意:flex布局的特点</h3>
+		<p>设为Flex布局以后，子元素的float、clear和vertical-align属性将失效</p>
+
+
+
+
+
+
+
+
+
+
+		<h1>Flex 基本概念</h1>
+		<p>采用Flex布局的元素，称为Flex容器（flex container）</p>
+		<p>它的所有子元素自动成为容器成员，称为Flex项目（flex item）</p>
+		<img src="img/bg2015071004.png" alt="">
+
+		<h3>图片描述</h3>
+		<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）</p>
+		<span>主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end</span>
+
+		<p>项目默认沿主轴排列</p>
+		<span>单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size</span>
+
+
+
+
+
+
+
+
+
+
+		<h1>容器属性</h1>
+		<p>共有六种属性</p>
+		<ul>
+			<li>flex-direction</li>
+			<li>flex-wrap</li>
+			<li>flex-flow</li>
+			<li>justify-content</li>
+			<li>align-items</li>
+			<li>align-content</li>
+		</ul>
+
+
+
+
+
+		<h2>flex-direction</h2>
+		<p>flex-direction属性决定主轴的方向（即项目的排列方向）</p>
+
+		<style>
+			.box {
+				flex-direction: row | row-reverse | column |column-reverse;
+			}
+		</style>
+		<pre>
+			.box {
+				flex-direction: row | row-reverse | column | column-reverse;
+			}
+		</pre>
+
+		<h3>图片示例</h3>
+		<img src="img/bg2015071005.png" alt="">
+
+		<h4>图片描述</h4>
+		<ul>
+			<li>
+				<p>row(默认值)</p>
+				<span>主轴为水平方向，起点在左端</span>
+			</li>
+			<li>
+				<p>row-reverse</p>
+				<span>主轴为水平方向，起点在右端</span>
+			</li>
+			<li>
+				<p>column</p>
+				<span>主轴为垂直方向，起点在上沿</span>
+			</li>
+			<li>
+				<p>column-reverse</p>
+				<span>主轴为垂直方向，起点在下沿</span>
+			</li>
+		</ul>
+
+
+
+
+
+		<h2>flex-wrap属性</h2>
+		<p>默认情况下，项目都排在一条线（又称"轴线"）上</p>
+
+		<h3>概念描述</h3>
+		<p>flex-wrap属性定义，如果一条轴线排不下，如何换行</p>
+
+		<h3>图片示例</h3>
+		<img src="img/bg2015071006.png" alt="">
+
+		<h3>语法规则</h3>
+		<style>
+			.box {
+				flex-wrap: nowrap | wrap | wrap-reverse;
+			}
+		</style>
+		<pre>
+			.box {
+				flex-wrap: nowrap | wrap | wrap-reverse;
+			}
+		</pre>
+
+		<h3>概念详细描述(共三种情况)</h3>
+
+		<h4>nowrap(默认):不换行</h4>
+		<h5>图片示例</h5>
+		<img src="img/bg2015071007.png" alt="">
+
+		<h4>wrap:换行,第一行在上方</h4>
+		<h5>图片示例</h5>
+		<img src="img/bg2015071008.jpg" alt="">
+
+		<h4>wrap-reverse:换行,第一行在下方</h4>
+		<h5>图片示例</h5>
+		<img src="img/bg2015071009.jpg" alt="">
+
+
+
+
+
+		<h2>flex-flow</h2>
+		<p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</p>
+
+		<h3>语法规则</h3>
+		<style>
+			.box {
+				flex-flow: <flex-direction> || <flex-wrap>;
+			}
+		</style>
+		<pre>
+			.box {
+				flex-flow: <flex-direction> || <flex-wrap>;
+			}
+		</pre>
+
+
+
+
+
+		<h2>justify-content属性</h2>
+		<p>justify-content属性定义了项目在主轴上的对齐方式</p>
+
+		<h3>语法格式</h3>
+		<style>
+			.box {
+				justify-content: flex-start | flex-end | center | space-between | space-around;
+			}
+		</style>
+		<pre>
+			.box {
+				justify-content: flex-start | flex-end | center | space-between |space-around;
+			}
+		</pre>
+
+		<h3>概念详细描述(共五种情况)</h3>
+		
+		<ul>
+			<li>flex-start(默认):左对齐</li>
+			<li>flex-end: 右对齐</li>
+			<li>center: 居中</li>
+			<li>space-between: 两端对齐,项目之间的间隔相等</li>
+			<li>
+				<p>space-around: 每个项目两侧的间隔相等</p>
+				<h3>注意:此时项目之间的间隔比项目与边框的间隔大一倍</h3>
+			</li>
+		</ul>
+		<h4>图片集中示例</h4>
+		<img src="img/bg2015071010.png" alt="">
+
+
+
+
+
+		<h2>align-items属性</h2>
+		<p>align-items属性定义项目在交叉轴上如何对齐</p>
+
+		<h3>语法格式</h3>
+		<style>
+			.box {
+				align-items: flex-start | flex-end | center | baseline | stretch;
+			}
+		</style>
+		<pre>
+			.box {
+				align-items: flex-start | flex-end | center | baseline | stretch;
+			}
+		</pre>
+
+		<h3>概念详细描述(共五种情况)</h3>
+		<ul>
+			<li>stretch(默认值): 如果项目未设置高度或设为auto，将占满整个容器的高度</li>
+			<li>flex-start: 交叉轴的起点对齐</li>
+			<li>flex-end: 交叉轴的终点对齐</li>
+			<li>center: 交叉轴的中点对齐</li>
+			<li>baseline: 项目的第一行文字的基线对齐</li>
+		</ul>
+
+		<h4>图片示例</h4>
+		<img src="img/bg2015071011.png" alt="">
+
+
+
+
+
+		<h2>align-conter</h2>
+		<p>align-content属性定义了多根轴线的对齐方式</p>
+		<h3>注意:如果项目只有一根轴线，该属性不起作用</h3>
+
+		<h3>语法格式</h3>
+		<style>
+			.box {
+				align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+			}
+		</style>
+		<pre>
+			.box {
+				align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+			}
+		</pre>
+
+		<h3>概念详细描述(共六种情况)</h3>
+		<ul>
+			<li>flex-start: 与交叉轴的起点对齐</li>
+			<li>flex-end: 与交叉轴的终点对齐</li>
+			<li>center: 与交叉轴的中点对齐</li>
+			<li>space-between: 与交叉轴两端对齐，轴线之间的间隔平均分布</li>
+			<li>
+				<p>space-around: 每根轴线两侧的间隔都相等</p>
+				<h3>注意: 轴线之间的间隔比轴线与边框的间隔大一倍</h3>
+			</li>
+			<li>stretch(默认值): 轴线占满整个交叉轴</li>
+		</ul>
+
+
+
+
+
+
+
+
+
+
+		<h1>项目的属性</h1>
+		<p>共有六种属性</p>
+		<ul>
+			<li>order</li>
+			<li>flex-grow</li>
+			<li>flex-shrink</li>
+			<li>flex-basis</li>
+			<li>flex</li>
+			<li>align-self</li>
+		</ul>
+
+
+
+
+
+		<h2>order</h2>
+		<p>order属性定义项目的排列顺序</p>
+
+		<h3>样式特点</h3>
+		<p>数值越小，排列越靠前，默认为0</p>
+		<style>
+			.item {
+				order: <integer>;
+			}
+		</style>
+		<pre>
+			.item {
+				order: <integer>;
+			}
+		</pre>
+
+		<h3>图片示例</h3>
+		<img src="img/bg2015071013.png" alt="">
+
+
+
+
+
+		<h2>flex-grow</h2>
+		<p>flex-grow属性定义项目的放大比例，默认为0</p>
+
+		<h3>样式特点</h3>
+		<p>如果存在剩余空间，也不放大</p>
+
+		<h3>语法格式</h3>
+		<style>
+			.item {
+				flex-grow: <number>;
+			}
+		</style>
+		<h4>图片示例</h4>
+		<img src="img/bg2015071014.png" alt="">
+
+		<h3>图片描述</h3>
+		<p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）</p>
+		<p>如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍</p>
+
+
+
+
+
+		<h2>flex-shrink</h2>
+		<p>flex-shrink属性定义了项目的缩小比例，默认为1</p>
+
+		<h3>样式特点</h3>
+		<p>如果空间不足，该项目将缩小</p>
+
+		<h3>语法格式</h3>
+		<style>
+			.item {
+				flex-shrink: <number>;
+			}
+		</style>
+		<h4>图片示例</h4>
+		<img src="img/bg2015071015.jpg" alt="">
+		<h4>图片描述</h4>
+		<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小</p>
+		<p>如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小</p>
+
+		<h3>注意: 负值对该属性无效</h3>
+
+
+
+
+
+		<h2>flex-basis</h2>
+		<p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）</p>
+
+		<h3>实现原理</h3>
+		<p>浏览器根据这个属性，计算主轴是否有多余空间</p>
+		<p>它的默认值为auto，即项目的本来大小</p>
+
+		<h3>语法格式</h3>
+		<style>
+			.item {
+				flex-basis: <length> | auto;/* defalut: auto; */
+			}
+		</style>
+		<pre>
+			.item {
+				flex-basis: <length> | auto;/* default: auto; */
+			}
+		</pre>
+
+		<h3>概念描述</h3>
+		<p>可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间</p>
+
+
+
+
+
+		<h2>flex</h2>
+		<p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写</p>
+		<span>默认值为0 1 auto</span>
+
+		<h3>注意: 后两个属性可选</h3>
+
+		<h3>语法格式</h3>
+		<style>
+			.item {
+				flex: none | [<'flex-grow'> <'flex-shrink'>? || <'flex-basis'>];
+			}
+		</style>
+		<h4>语法描述</h4>
+		<p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)</p>
+
+		<h3>注意:</h3>
+		<p>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值</p>
+
+
+
+
+
+		<h2>align-self</h2>
+		<p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性</p>
+
+		<h3>属性用法</h3>
+		<p>默认值为auto，表示继承父元素的align-items属性</p>
+		<p>如果没有父元素，则等同于stretch</p>
+
+		<h3>语法格式</h3>
+		<style>
+			.item {
+				align-self: auto | flex-start | flex-end | center | baseline | stretch;
+			}
+		</style>
+		<pre>
+			.item {
+				align-self: auto | flex-start | flex-end | center | baseline | stretch;
+			}
+		</pre>
+
+		<h3>图片示例</h3>
+		<img src="img/bg2015071016.png" alt="">
+
+
+
+
+
+
+
+
+
+
+
+		<h1>真实示例</h1>
+		<style>
+			body {margin: 0;}
+			ul,li {margin: 0; padding: 0;}
+			li {list-style-type: none;}
+			#list {border: 2px solid gold; height: 500px; display: flex; flex-direction: row;}
+			#list li {font-family: "microsoft yahei"; font-size: 50px; background-color: red; color: #fff; margin: 2px; flex-grow: 1;}
+		</style>
+		<ul id="list">
+			<li>test1</li>
+			<li>test2</li>
+			<li>test3</li>
+		</ul>
+	</body>
+</html>

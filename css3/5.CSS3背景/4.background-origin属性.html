@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>background-origin 属性</title>
+	</head>
+	<body>
+		<h1>background-origin 属性</h1>
+		<p>background-origin 属性规定背景图片的定位区域</p>
+		<p>背景图片可以放置于 content-box、padding-box 或 border-box 区域</p>
+		<p>如图: <img src="../img/background-origin.gif" alt="" /></p>
+		<p>在 content-box 中定位背景图片</p>
+		<style>
+			.wrap {
+				background: url(../../AJAX/img/1.jpg);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				-webkit-background-origin: content-box;
+				background-origin: content-box;
+			}
+		</style>
+	</body>
+</html>

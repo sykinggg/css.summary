@@ -1,0 +1,14 @@
+// Progress bars
+// 进度条样式
+
+// 进度条样式
+.progress-bar-variant(@color) {
+  background-color: @color;
+
+  // Deprecated parent class requirement as of v3.2.0
+  // 不要求作为父类用3.2.0版
+  // 条纹样式
+  .progress-striped & {
+    #gradient > .striped();
+  }
+}

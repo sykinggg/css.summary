@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>rotate() 方法</title>
+	</head>
+	<body>
+		<h1>rotate() 方法</h1>
+		<p>通过 rotate() 方法，元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转</p>
+		<h2>实例</h2>
+		<style>
+			div {
+				transform: rotate(30deg);
+				-ms-transform: rotate(30deg);
+				-webkit-transform: rotate(30deg);
+			}
+		</style>
+		<p>值 rotate(30deg) 把元素顺时针旋转 30 度</p>
+		<h1>真实案例</h1>
+		<style>
+			div
+			{
+			   width:100px;
+			   height:75px;
+			   background-color:yellow;
+			   border:1px solid black;
+			}
+			div#div2
+			{
+			   transform:rotate(30deg);
+			   -ms-transform:rotate(30deg); /* IE 9 */
+			   -moz-transform:rotate(30deg); /* Firefox */
+			   -webkit-transform:rotate(30deg); /* Safari and Chrome */
+			   -o-transform:rotate(30deg); /* Opera */
+			}
+		</style>
+		   <div>
+		       你好。这是一个 div 元素。
+		   </div>
+		   <div id="div2">
+		       你好。这是一个 div 元素。
+		   </div>
+	</body>
+</html>

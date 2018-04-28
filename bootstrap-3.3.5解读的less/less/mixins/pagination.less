@@ -1,0 +1,27 @@
+// Pagination
+// 分页样式
+
+.pagination-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  > li {
+    > a,
+    > span {
+      padding: @padding-vertical @padding-horizontal;
+      font-size: @font-size;
+      line-height: @line-height;
+    }
+    // 第一个元素样式的设置
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@border-radius);
+      }
+    }
+    // 最后一个样式元素的设置
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius);
+      }
+    }
+  }
+}

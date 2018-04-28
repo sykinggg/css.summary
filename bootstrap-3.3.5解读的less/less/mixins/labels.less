@@ -1,0 +1,13 @@
+// Labels
+// 包含标签的标签的背景样式是字体颜色变暗
+
+.label-variant(@color) {
+  background-color: @color;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@color, 10%);
+    }
+  }
+}

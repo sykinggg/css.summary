@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新的转换属性</title>
+	</head>
+	<body>
+		<h1>新的转换属性</h1>
+		<p>下面的表格列出了所有的转换属性：</p>
+		<table>
+			<thead>
+				<tr>
+					<td>属性</td>
+					<td>描述</td>
+					<td>CSS</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>transform</td>
+					<td>向元素应用 2D 或 3D 转换</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>transform-origin</td>
+					<td>允许你改变被转换元素的位置</td>
+					<td>3</td>
+				</tr>
+			</tbody>
+		</table>
+		<h1>真实案例</h1>
+		<style>
+			div
+			{
+			   width:100px;
+			   height:75px;
+			   background-color:yellow;
+			   border:1px solid black;
+			}
+			div#div2
+			{
+			   transform:skew(30deg,20deg);
+			   -ms-transform:skew(30deg,20deg); /* IE 9 */
+			   -moz-transform:skew(30deg,20deg); /* Firefox */
+			   -webkit-transform:skew(30deg,20deg); /* Safari and Chrome */
+			   -o-transform:skew(30deg,20deg); /* Opera */
+			}
+
+		</style>
+		   <div>
+		       你好。这是一个 div 元素。
+		   </div>
+		   <div id="div2">
+		       你好。这是一个 div 元素。
+		   </div>
+	</body>
+</html>

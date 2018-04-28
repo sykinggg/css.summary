@@ -1,0 +1,83 @@
+// Button variants
+// 按钮样式
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// 轻松地抽掉默认的样式，以及：悬停，：焦点，：主动（三种伪类选择器），
+// and disabled options for all buttons
+// 和所有按钮的禁用选项
+
+//按钮的样式（默认状态）
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+     //焦点状态或者该类（延时）
+     &:focus, &.focus {
+       color: @color;
+       background-color: darken(@background, 10%);
+       border-color: darken(@border, 25%);
+     }
+
+     //仅有悬停的类（非延时）
+     &:hover {
+       color: @color;
+       background-color: darken(@background, 10%);
+       border-color: darken(@border, 12%);
+     }
+
+     //主动状态或该类（延时）
+     &:active,
+     &.active,
+     //下拉菜单切换时的样式
+     .open > .dropdown-toggle& {
+       color: @color;
+       background-color: darken(@background, 10%);
+       border-color: darken(@border, 12%);
+       //下拉菜单：悬停，焦点或焦点类的样式。
+       &:hover,
+       &:focus,
+       &.focus {
+         color: @color;
+         background-color: darken(@background, 17%);
+         border-color: darken(@border, 25%);
+       }
+     }
+
+     //定义弹出框与下拉菜单没有背景图片
+     &:active,
+     &.active,
+     .open > .dropdown-toggle& {
+       background-image: none;
+     }
+     // 定义失效的按钮所有css样式全部停滞
+     &.disabled,
+     &[disabled],
+     fieldset[disabled] & {
+       &,
+       &:hover,
+       &:focus,
+       &.focus,
+       &:active,
+       &.active {
+         background-color: @background;
+         border-color: @border;
+       }
+     }
+
+     //定义一个类的样式字体颜色与背景颜色相反（alert，toggle）
+     .badge {
+       color: @background;
+       background-color: @color;
+     }
+}
+
+// Button sizes
+// 字体的内边距；大小；行高；圆角
+//vertical:垂直；horizontal：水平
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}

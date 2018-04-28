@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3 动画</title>
+	</head>
+	<body>
+		<h1>CSS3 动画</h1>
+		<p>当您在 @keyframes 中创建动画时，请把它捆绑到某个选择器，否则不会产生动画效果</p>
+		<h2>注意:</h2>
+		<p>通过规定至少以下两项 CSS3 动画属性，即可将动画绑定到选择器:</p>
+		<p>1. 规定动画的名称</p>
+		<p>2. 规定动画的时长</p>
+		<h1>示例:</h1>
+		<p>把 "myfirst" 动画捆绑到 div 元素，时长：5 秒</p>
+		<style>
+			div {
+				animation: myfirst 5s;
+				-moz-animation: myfirst 5s;
+				-webkit-animation: myfirst 5s;
+				-o-animation: myfirst 5s;
+			}
+		</style>
+		<p>注释：您必须定义动画的名称和时长。如果忽略时长，则动画不会允许，因为默认值是 0</p>
+	</body>
+</html>

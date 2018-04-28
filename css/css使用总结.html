@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css使用总结</title>
+	</head>
+	<body>
+
+		<h1>因为测试css代码因此执行成功后注释会影响全局的代码</h1>
+
+
+
+		<h1>demo1.使用CSS垂直居中一切元素</h1>
+		<style>
+			/*html, body {
+				height: 100%;
+				margin: 0;
+			}
+
+			body {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-align-items: center;
+				-ms-flex-align: center;
+				align-items: center;
+			}
+
+			h1 {
+				margin: 0 auto;
+			}*/		
+		</style>
+		
+		
+
+		<h1>demo2.使用CSS来制作箭头</h1>
+		<style>
+			.caret {
+				display: inline-block;
+				width: 0;
+				height: 0;
+
+				vertical-align: middle;
+				
+				/* 如果需要向上的箭头的话, 就把border-top改为border-bottom */
+				/*border-top: 20px solid;*/
+				border-right: 20px solid transparent;
+				border-left: 20px solid transparent;
+			}
+			.up {
+				border-bottom: 20px solid;
+			}
+			.down {
+				border-top: 20px solid;
+			}
+		</style>
+		<!-- 上箭头 -->
+		<div class="caret up"></div>
+		<!-- 下箭头 -->
+		<div class="caret down"></div>
+
+
+
+
+
+		<h1>demo3.使用CSS来让footer永远位于屏幕底部</h1>
+		<style>
+			/*html {
+				height: 100%;
+			}
+
+			body {
+				position: relative;
+				min-height: 100%;
+			}*/
+
+			/* 此处的高度必须和footer的高度相同 */
+			/*body:after {
+				display: block;
+				height: 200px; 
+			}*/
+
+			/*.footer {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 200px;
+			}*/
+		</style>
+		<div class="header"></div>
+		<div class="content"></div>
+		<div class="footer"></div>
+
+
+
+
+
+		<h1>demo4.使用CSS避免图片超出包含块</h1>
+		<style>
+			/*img {
+				display: block;
+				max-width: 100%;
+				margin: 0 auto;
+			}*/
+		</style>
+
+
+
+
+
+		<h1>demo5.使用CSS制作带有分割线的导航</h1>
+		<p>制作一个带有分割线的横向导航, 可以使用CSS的:not和:last-child来实现</p>
+		<style>
+			.nav li:not(:last-child) {
+				border-right: 1px solid #ccc;
+			}
+		</style>
+
+
+
+
+
+		<h1>demo6.使用CSS来通过动态计算设置元素的高度</h1>
+		<p>CSS3的calc属性</p>
+		<span>可以使用这个属性来动态计算一个元素的高度</span>
+		<h3>注意:</h3>
+		<p>当使用calc来计算元素的高度的时候你要注意, 计算的高度是依赖于父级元素的高度的, 所以, 需要先设置父级元素的高度</p>
+
+		<style>
+			/*使用vh这个单位来设置高度为100%*/
+			/*.container {
+				height: 100vh;
+			}
+
+			.content {
+				width: 100%;
+				height: calc(100% - 150px);
+				background-color: #aaa;
+			}*/
+		</style>
+		<div class="container">
+			<div class="content"></div>
+		</div>
+
+
+
+
+
+		<h1>demo7.使用CSS设置全屏图片</h1>
+
+		<h2>设置全屏背景图片</h2>
+		<style>
+			/*html {
+				background: url('https://pic3.zhimg.com/7d16ada6da5f2dab6ebf773ed1c3925e_b.jpg') no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+			}*/
+		</style>
+
+		<h2>使用img标签的全屏图片</h2>
+		<p>要使用img标签的话, 最好是将它放在一个div中</p>
+		<style>
+			/*注意隐藏滚动条*/
+			/*html {
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}			
+			.bg {
+				position: fixed;
+				top: -50%;
+				left: -50%;
+
+				width: 200%;
+				height: 200%;
+			}
+
+			.gb img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				min-width: 50%;
+				min-height: 50%;
+			}*/
+		</style>
+		<!-- <div class="gb">
+			<img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1466492529&di=5e75727fc16100765a9aa9616a24dbc5&src=http://h.hiphotos.baidu.com/zhidao/pic/item/6a63f6246b600c3320b14bb3184c510fd8f9a185.jpg" alt="">
+		</div> -->
+
+
+
+
+
+		<h1>demo8.使用CSS的BFC来清除浮动</h1>
+		<p>使用BFC的特性来清除浮动是一个很常用的手段</p>
+		<h3>注意:当计算BFC的高度的时候, 浮动元素也会参与计</h3>
+		<style>
+			/*.container {
+				width: 800px;
+				padding: 20px;
+				border: 1px solid #aaa;
+				overflow: hidden;
+			}
+			.fl {
+				float: left;
+				width: 200px;
+				height: 300px;
+				border: 1px solid red;
+			}*/
+		</style>
+		<div class="container">
+			<div class="fl"></div>
+		</div>
+
+
+
+
+
+		<h1>demo9.使用CSS来去除display为inline-block的li之间的间隙</h1>
+		<p>当制作一个横向列表的时候, 一般设置li的display属性为inline-block</p>
+		<p>这样就有一个问题就是每两个li之间总是会有你不知道是什么的间隙</p>
+		<p>设置ul的font-size为0, 再对li的字体大小进行单独设置就行了</p>
+		
+		<style>
+			/* 以下两句视不同情况而定 */
+			ul {
+				font-size: 0;
+				
+				letter-spacing: -1px;
+				word-spacing: -1px;
+			}
+			ul li {
+				font-size: 16px;
+				display: inline-block;
+				letter-spacing: normal;
+				word-spacing: normal;
+				width: 200px;
+				height: 200px;
+				border: 1px solid #aaa;
+			}
+		</style>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+
+
+
+
+		<h1>demo10.使用CSS实现图片预加载(失败)</h1>
+		<style>
+			#preload-01 {
+				background: url(http://image60.360doc.com/DownloadImg/2013/04/1613/31674132_21.jpg) no-repeat -9999px -9999px;
+			}
+		</style>
+		<div id="preload-01"></div>
+
+
+
+
+
+		<h1>demo11.使用CSS来避免闪烁</h1>
+		<p>内容在图片加载好之前渲染好的话,可能会看到包含块被撑开的一个过程, 这个过程就叫做闪烁</p>
+		<p>通过margin/padding来实现</p>
+		<style>
+			/* 避免编边距折叠 */
+			/*.container {
+				position: relative;
+				width: 100%;
+				max-height: 500px;
+				background-color: red;
+
+				overflow: hidden;
+			}*/
+			
+			/* 或者设置padding-top: 50%; */
+			/*.container:after {
+				content: "";
+				display: block;
+				margin-top: 50%;
+			}*/
+		</style>
+		<div class="container">
+			<img src="http://image60.360doc.com/DownloadImg/2013/04/1613/31674132_21.jpg" alt="">
+		</div>
+
+
+
+
+
+		<h1>demo12.使用CSS来制作图片加载失败的效果</h1>
+		<p>在图片加载失败的时候, 使用CSS来让加载失败的图片显得更美观更友好</p>
+		<style>
+			img:before {
+				content: "图片未加载";
+				display: block;
+				margin-bottom: 10px;
+			}
+
+			img:after {
+				content: "(url: " attr(src)")";
+				display: block;
+				font-size: 12px;
+			}
+		</style>
+		<img src="http://image60.360doc.com/DownloadImg/2013/04/1613/31674132_21.jpg" alt="">
+	</body>
+</html>

@@ -1,0 +1,36 @@
+// List Groups
+// 列表组
+
+// 列表组的样式设计有传参
+.list-group-item-variant(@state; @background; @color) {
+  .list-group-item-@{state} {
+    color: @color;
+    background-color: @background;
+
+    // 同时设置a，与button的字体颜色
+    a&,
+    button& {
+      color: @color;
+
+      // 列表组的标题继承颜色
+      .list-group-item-heading {
+        color: inherit;
+      }
+
+      // 列表组的样式设置
+      &:hover,
+      &:focus {
+        color: @color;
+        background-color: darken(@background, 5%);
+      }
+      // 设置字体颜色然后把原背景颜色设置给背景颜色和边框颜色
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        color: #fff;
+        background-color: @color;
+        border-color: @color;
+      }
+    }
+  }
+}

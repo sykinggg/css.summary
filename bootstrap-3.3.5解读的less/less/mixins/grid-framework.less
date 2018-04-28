@@ -1,0 +1,107 @@
+// Framework grid generation
+// 框架网格形成
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`.
+// 用引导来生成正确的网格类数目
+// “@网格列”的任何值。
+// push 是推过去  pull是拉回来 如果以左右为列的话  从左到右用push  从右往左用pull
+
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  // 所有尺寸的网格列常见的样式，宽度1-12
+  .col(@index) { // initial初始@index定义的宽
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+
+  //当当前的宽的值小于等于网格列的最大宽12时当前宽加一
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo 一般；“= <”不是一个错字
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+
+  //当当前的宽的值大于网格列的最大宽度12时重定位到下一行（流式布局）
+  .col(@index, @list) when (@index > @grid-columns) { // terminal终点站
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      // 防止空间被挤开（浏览器下方出现滚动条）
+      min-height: 1px;
+      // Inner gutter via padding
+      // 用padding来形成间隔
+      padding-left:  ceil((@grid-gutter-width / 2));
+      padding-right: floor((@grid-gutter-width / 2));
+    }
+  }
+  .col(1); // kickstart it启动
+}
+
+.float-grid-columns(@class) {
+  .col(@index) { // initial初始
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general一般
+    @item: ~".col-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal终点站
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1); // kickstart it启动
+}
+
+
+//设定类获取经过初始化的值进行判断当类型妈祖判断条件时进行样式设置
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .col-@{class}-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
+  .col-@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index = 0) {
+  .col-@{class}-push-0 {
+    left: auto;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index > 0) {
+  .col-@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index = 0) {
+  .col-@{class}-pull-0 {
+    right: auto;
+  }
+}
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
+  .col-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+// less的基本循环
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column(@index, @class, @type);
+  // next iteration
+  // 下一次迭代
+  .loop-grid-columns((@index - 1), @class, @type);
+}
+
+// Create grid for specific class
+// 创建特定类的网格
+.make-grid(@class) {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class, width);
+  .loop-grid-columns(@grid-columns, @class, pull);
+  .loop-grid-columns(@grid-columns, @class, push);
+  .loop-grid-columns(@grid-columns, @class, offset);
+}

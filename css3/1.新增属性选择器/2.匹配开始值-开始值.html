@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>匹配开始值</title>
+	</head>
+	<body>
+		<h1>匹配开始值</h1>
+		<p>E[attr^="value"]属性选择器，指的是选择attr属性值以“value”开头的所有元素</p>
+		<p>所选择的属性其对应的属性值是以“value”开始的</p>
+		<h2>设置a标签的href属性值的背景色</h2>
+		<style>
+			.wrap a[href^="http://"] {
+				background: orange;
+				color: blue;
+			}
+			.wrap a[href^="mailto:"] {
+				background: blue;
+				color: orange;
+			}
+		</style>
+		<p>代码选择了a标签的href属性，并且选取属性值为"http://"和"mailto:"开头的所有a标签，改变其颜色</p>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用border-image属性来指定边框宽度</title>
+	</head>
+	<body>
+		<h1>使用border-image属性来指定边框宽度</h1>
+		<p>除了可以使用border或border-width属性指定边框的宽度外，使用border-image属性同样可以指定边框的宽度</p>
+		<h2>方法示例</h2>
+		<style>
+			border-image: url('图像文件') A B C D /border-width;
+			.wrap {
+				border: dashed;
+				border-image: url(../../AJAX/img/1.jpg) 18 18 18 18 /18px;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 18 18 18 18 /18px;
+				-moz-border-image: url(../../AJAX/img/1.jpg) 18 18 18 18 /18px;
+				width: 300px;
+			}
+		</style>
+		<p>在上述代码中A、B、C和D四个参数只指定了一个参数18px，这是因为CSS3中，如果此处的四个参数完全相同，可以只写一个参数，将其他三个参数省略</p>
+		<style>
+			.wrap {
+				border-image: url(../../AJAX/img/1.jpg) 18 /5px 10px 15px 20px;
+			}
+		</style>
+	</body>
+</html>

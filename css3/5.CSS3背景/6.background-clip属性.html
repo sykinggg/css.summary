@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>background-clip 属性</title>
+	</head>
+	<body>
+		<h1>background-clip 属性</h1>
+		<h2>标签定义及使用说明</h2>
+		<h3>JavaScript 语法</h3>
+		<script>
+			object object.style.background-clip="content-box"
+		</script>
+		<h3>语法</h3>
+		<style>
+			.wrap {
+				background-clip: border-box content-box padding-box;
+			}
+		</style>
+		<table border="1px solid" cellspacing="" cellpadding="">
+			<tr>
+				<td>border-box</td>
+				<td>默认值。背景绘制在边框方框内（剪切成边框方框）</td>
+			</tr>
+			<tr>
+				<td>padding-box</td>
+				<td>背景绘制在衬距方框内（剪切成衬距方框）</td>
+			</tr>
+			<tr>
+				<td>content-box</td>
+				<td>背景绘制在内容方框内（剪切成内容方框）</td>
+			</tr>
+		</table>
+		<h3>实例</h3>
+		<style>
+			.wrap {
+				background-color: blue;
+				background-clip: content-box;
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>border-image属性最简单的使用方法</title>
+	</head>
+	<body>
+		<h1>border-image属性最简单的使用方法</h1>
+		<p>border-image:url(图像文件的路径) A B C D</p>
+		<p>-webkit-border-image：url(图像文件的路径) A B C D</p>
+		<p>-moz-border-image：url(图像文件的路径) A B C D</p>
+		<p>border-image属性值中至少必须指定五个参数，其中第一个参数为边框所使用的图像文件的路径</p>
+		<p>A、B、C、D四个参数表示当浏览器自动把边框所使用到的图像进行分隔时的上边距、右边距、下边距及左边距</p>
+		<p>如图: <img src="../img/borderimage_1.png" alt="" /> <img src="../img/borderimage.png" alt="" /></p>
+		<h2>首先，当在样式代码中书写如下所示的代码时，浏览器对于边框所使用的图像分割方法如图2所示</h2>
+		<style>
+			/*.wrap {
+				border-image: url(../../AJAX/img/1.jpg) 18 18 18 18;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 18 18 18 18;
+				border-image: url(../../AJAX/img/1.jpg) 18 18 18 18;
+			}*/
+		</style>
+		如图中所示，图像被自动分割为9部分。分割后的图像在CSS3中的名称如表所示
+		<style>
+			/*.wrap {
+				border-top-left-image / border-top-image / border-top-right-image
+				border-left-image / border-right-image
+				border-bottom-left-image / border-bottom-image / border-bottom-right-image
+			}*/
+		</style>
+		<h3>可以看出浏览器是如何将分割图像显示在一个边框宽度为5px的div元素中</h3>
+		<style>
+			.wrap {
+				border: 5px solid;
+				border-image: url(../../AJAX/img/1.jpg) 18 18 18 18;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 18 18 18 18;
+				-moz-border-image: url(../../AJAX/img/1.jpg) 18 18 18 18;
+				width: 300px;
+			}
+		</style>
+		<div class="wrap">
+			燕草如碧丝，秦桑低绿枝。
+			当君怀归日，是妾断肠时。
+			春风不相识，何事入罗帏。
+		</div>
+	</body>
+</html>

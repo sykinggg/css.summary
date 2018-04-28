@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择指定的元素<:nth-of-type()></title>
+	</head>
+	<body>
+		<h1>选择指定的元素<:nth-of-type()></h1>
+		<p>:nth-of-type类似于:nth-child</p>
+		<p>不同的是他只计算选择器中指定的那个元素，其实我们前面的实例都是指定了具体的元素，这个选择器主要对用来定位元素中包含了好多不同类型的元素是很有用处</p>
+		<h2>为奇数和偶数的p元素指定两种不同的背景色</h2>
+		<style>
+			p:nth-of-type(odd) {
+				background: #ffff33;
+			}
+			p:nth-of-type(even) {
+				background: #99ff33; 
+			}
+		</style>
+	</body>
+</html>

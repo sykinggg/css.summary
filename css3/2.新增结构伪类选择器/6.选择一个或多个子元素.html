@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择某元素的一或多个特定的子元素<:nth-child()></title>
+	</head>
+	<body>
+		<h1>选择某元素的一或多个特定的子元素<:nth-child()></h1>
+		<p>:nth-child()可以选择元素的一个或多个特定的子元素，可以定义他的值(值可以是整数也可以是表达式)</p>
+		<h2>1. 简单数字序号写法 :nth-child(number)，直接匹配第number个元素。参数number必须为大于0的整数</h2>
+		<h3>把第3个p的背景设为绿色</h3>
+		<style>
+			p:nth-child(3) {
+				background: green;
+			}
+		</style>
+		<h2>2. 倍数写法 :nth-child(an)，匹配所有倍数为a的元素</h2>
+		<p>其中参数an中的字母n不可缺省，它是倍数写法的标志，如3n、5n</p>
+		<h3>把第2、第4、第6、…、所有2的倍数的p的背景设为蓝色</h3>
+		<style>
+			p:nth-child(2n) {
+				background: blue;
+			}
+		</style>
+		<h2>3. 倍数分组匹配 :nth-child(an+b)与:nth-child(an-b)，先对元素进行分组，每组有a个，b为组内成员的序号，其中字母n和加号+不可缺省，位置不可调换，这是该写法的标志，其中a,b均为正整数或0</h2>
+		<h3>匹配第1、第4、第7、…、每3个为一组的第1个p元素</h3>
+		<style>
+			p:nth-child(3n+1) {
+				background: orange;
+			}
+		</style>
+		<h3>匹配第3-1=2、第6-1=5、…、第3的倍数减1个p元素</h3>
+		<style>
+			p:nth-child(3n-1) {
+				background: #33ff33;
+			}
+		</style>
+		<h2>奇偶匹配 :nth-child(odd)与:nth-child(even)分别匹配序号为奇数与偶数的元素</h2>
+		<p>奇数(odd)与(2n+1)结果一样；偶数(even)与(2n+0)及(2n)结果一样</p>
+		<h3>为奇数和偶数p元素指定两种不同的背景色</h3>
+		<style>
+			p:nth-child(odd) {
+				background: #ff0000;
+			}
+			p:nth-child(even) {
+				background: #0000ff;
+			}
+		</style>
+	</body>
+</html>

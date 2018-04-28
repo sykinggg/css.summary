@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绘制四个角不同半径的圆角边框</title>
+	</head>
+	<body>
+		<h1>绘制四个角不同半径的圆角边框</h1>
+		<p>可以在border-image属性中指定元素四条边中的图像是以拉伸的方式显示</p>
+		<style>
+			.wrap {
+				border-image: url(文件路径) A B C D/ border-width topbottom leftright; 
+			}
+		</style>
+		<p>topbottom表示元素的上下两条边中图像的显示方法</p>
+		<p>leftright表示元素的左右两条边中的显示方法</p>
+		<h2>在显示方法中可以指定的值为repeat、stretch、round三种</h2>
+		<h3>repeat</h3>
+		<p>将显示方法指定为repeat时，图像将以平铺的方式进行显示</p>
+		<style>
+			.wrap {
+				border-image: url(../../AJAX/img/1.jpg) 18 /5px repeat repeat;
+				-moz-border-image: url(../../AJAX/img/1.jpg) 18 /5px repeat repeat;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 18 /5px repeat repeat;
+			}
+		</style>
+		<h3>stretch</h3>
+		<p>将显示方法指定为stretch时，图像将以拉伸的方式进行显示</p>
+		<h3>repeat + stretch</h3>
+		<p>将显示方法指定为repeat+stretch时，图像将以平铺方式和拉伸方式结合使用</p>
+		<style>
+			.wrap {
+				border-image: url(../../AJAX/img/1.jpg) 13 /5px repeat stretch;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 13 /5px repeat stretch;
+				-moz-border-image: url(../../AJAX/img/1.jpg) 13 /5px repeat stretch;
+			}
+		</style>
+		<h3>round</h3>
+		<p>将显示方法指定为round时与将显示指定为repeat类似</p>
+	</body>
+</html>

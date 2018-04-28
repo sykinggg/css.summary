@@ -1,0 +1,32 @@
+// Tables
+// table的样式
+
+.table-row-variant(@state; @background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  // 确切的选择器下面需要重写`表的边框样式`和防止，样式继承到嵌套表。
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.@{state},
+    > th.@{state},
+    &.@{state} > td,
+    &.@{state} > th {
+      background-color: @background;
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // 悬停状态和类名
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  // 注：这是不可用的单元格或行内` thead `或` tFoot `。
+  .table-hover > tbody > tr {
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 5%);
+    }
+  }
+}

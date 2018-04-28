@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>匹配包含值</title>
+	</head>
+	<body>
+		<h1>匹配包含值</h1>
+		<p>E[attr*="value"]属性选择器表示的是选择attr属性值中包含子串"value"的所有元素</p>
+		<p>其属性值中有这个"value"值都将被选中</p>
+		<h2>置a标签href的属性值的背景色</h2>
+		<style>
+			.wrap a[title*="hubwiz"] {
+				background: black;
+				color: white;
+			}
+		</style>
+		<p>选择.demo中元素有title属性并对应属性值包含hubwiz值的a元素</p>
+	</body>
+</html>

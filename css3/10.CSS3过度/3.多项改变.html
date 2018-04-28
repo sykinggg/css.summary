@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多项改变</title>
+	</head>
+	<body>
+		<h1>多项改变</h1>
+		<p>如需向多个样式添加过渡效果，请添加多个属性，由逗号隔开</p>
+		<h1>示例</h1>
+		<p>向宽度、高度和转换添加过渡效果</p>
+		<style>
+			div {
+				transition: width 2s, height 2s, transform 2s;
+				-moz-transition: width 2s, height 2s, -moz-transition 2s;
+				-webkit-transition: width 2s, height 2s, -webkit-transition 2s;
+				-o-transition: width 2s, height 2s, -o-transition 2s;
+			}
+		</style>
+	</body>
+</html>

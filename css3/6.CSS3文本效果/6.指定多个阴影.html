@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>指定多个阴影</title>
+	</head>
+	<body>
+		<h1>指定多个阴影</h1>
+		<p>指定多个阴影时使用逗号将多个阴影进行分隔</p>
+		<p>到目前为止，只有Firefox浏览器、Chrome浏览器及Opera浏览器对这个功能提供支持</p>
+		<h2>示例代码</h2>
+		<p>为文字依次指定了桔色、黄色及绿色阴影，同时也为这些阴影指定了适当的位置</p>
+		<style>
+			.wrap {
+				text-shadow: 10px 10px #f39800,
+							40px 35px #fff100,
+							70px 60px #c0ff00;
+				color: navy;
+				font-size: 50px;
+				font-weight: bold;
+			}
+		</style>
+		<div class="wrap">
+			Hello World!
+		</div>
+	</body>
+</html>

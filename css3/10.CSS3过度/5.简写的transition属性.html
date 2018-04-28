@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简写的 transition 实例</title>
+	</head>
+	<body>
+		<h1>简写的 transition 实例</h1>
+		<p>与上面的例子相同的过渡效果，但是使用了简写的 transition 属性</p>
+		<style>
+			div {
+				transition: width 1s linear 2s;
+				/*Firefox 4*/
+				-moz-transition: width 1s linear 2s;
+				/*Safair && Chrome*/
+				-webkit-transition: width 1s linear 2s;
+				/*Opera*/
+				-o-transition: width 1s linear 2s;
+			}
+		</style>
+	</body>
+</html>

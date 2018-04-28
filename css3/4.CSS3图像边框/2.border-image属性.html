@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>border-image属性</title>
+	</head>
+	<body>
+		<h1>border-image属性</h1>
+		<p>CSS3中增加了一个border-image属性，可以让处于随时变化状态的元素的长或宽的边框统一使用一个图像文件来绘制</p>
+		<p>使用border-image属性，会让浏览器在显示图像边框时，自动将所使用到的图像分割为9部分进行处理，这样就不需要页面制作者再另外进行人工处理了</p>
+		<p>使用border-image属性的时候，如果使用的是Firefox浏览器，需要在样式代码中将其书写成"-moz-border-image"的形式</p>
+		<p>如果使用的是Safari浏览器或Chrome浏览器，需要书写成"-webkit-border-image"的形式</p>
+		<p>如果使用的是Opera浏览器，需要写成"border-image"的形式</p>
+		<h2>使用border-image属性为该div元素添加了一个图像边框</h2>
+		<style>
+			.wrap {
+				border-image: url(../../AJAX/img/1.jpg) 20 20 20 20 / 20px;
+				-webkit-border-image: url(../../AJAX/img/1.jpg) 20 20 20 20 / 20px;
+				-moz-border-image: url(../../AJAX/img/1.jpg) 20 20 20 20 / 20px;
+				width: 200px;
+				height: 200px;
+				margin: 200 auto 0;
+				background: blue;
+			}
+		</style>
+		<div class="wrap"></div>
+	</body>
+</html>

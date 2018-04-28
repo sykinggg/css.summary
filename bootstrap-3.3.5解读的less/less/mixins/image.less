@@ -1,0 +1,43 @@
+// Image Mixins
+// 图像混合
+// - Responsive image：响应图像
+// - Retina image：视网膜图像
+
+
+// Responsive image：响应图像
+//
+// Keep images from scaling beyond the width of their parents.
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+                   // 保持图像缩放不会超出了他们的父母的宽度。
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+                // 根据宽度的高度来伸缩，否则会因为图像固定高度失真
+}
+
+
+// Retina image
+// 可视图像
+//
+// Short retina mixin for setting background-image and -size. Note that the
+// spelling of `min--moz-device-pixel-ratio` is intentional.
+// 短可视图像混合背景图片大小请注意.min--moz-device-pixel-ratio类的设置
+
+// 设置可视图像样式
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  // 响应式兼容dpi：分辨率
+  // 普通屏幕通常包含96dpi，一般将2倍于此的屏幕称之为高分屏，
+  // 即大于等于192dpi的屏幕，比如Mac视网膜屏就达到了192dpi（即2dppx），打印时一般会需要更大的dpi；
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}

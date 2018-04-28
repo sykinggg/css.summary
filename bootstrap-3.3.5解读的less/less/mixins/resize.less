@@ -1,0 +1,9 @@
+// Resize anything
+// 调整任何东西
+
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+                      // 选项：水平，垂直，两者
+  overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+                  // css3的大小每次只适用用户界面当overflow的属性值是不可见的
+}

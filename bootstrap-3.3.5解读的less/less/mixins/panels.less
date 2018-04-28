@@ -1,0 +1,32 @@
+// Panels
+// 面板
+
+// 面板变量样式
+.panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border) {
+  border-color: @border;
+
+  // 面板标题样式
+  & > .panel-heading {
+    color: @heading-text-color;
+    background-color: @heading-bg-color;
+    border-color: @heading-border;
+
+    // 面板内容体到标题之间的那条线
+    + .panel-collapse > .panel-body {
+      border-top-color: @border;
+    }
+
+    //徽章样式变量样式与标题样式变量引用相反
+    .badge {
+      color: @heading-bg-color;
+      background-color: @heading-text-color;
+    }
+  }
+
+  // 面板底部的样式
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border-bottom-color: @border;
+    }
+  }
+}
